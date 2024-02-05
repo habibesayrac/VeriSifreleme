@@ -22,7 +22,7 @@ namespace VeriSifreleme
 
         void listele()
         {
-            SqlDataAdapter da = new SqlDataAdapter("select * from TBLVERILER", connection);
+            SqlDataAdapter da = new SqlDataAdapter("Select*from TBLVERILER", connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -41,9 +41,9 @@ namespace VeriSifreleme
                     try
                     {
                         string cozum = dataGridView1.Rows[i].Cells[j].Value.ToString();
-                        byte[] cozumdizi = Convert.FromBase64String(cozum);
-                        string cozumveri = ASCIIEncoding.ASCII.GetString(cozumdizi);
-                        r[j] = cozumveri;
+                        byte[] cozumdızı = Convert.FromBase64String(cozum);
+                        string cozumverisi = ASCIIEncoding.ASCII.GetString(cozumdızı);
+                        r[j] = cozumverisi;
                     }
                     catch (Exception)
                     {
@@ -53,6 +53,7 @@ namespace VeriSifreleme
                 dt2.Rows.Add(r);
             }
             dataGridView2.DataSource = dt2;
+
         }
 
         private void BtnKaydet_Click(object sender, EventArgs e)
@@ -92,6 +93,7 @@ namespace VeriSifreleme
         private void Form1_Load(object sender, EventArgs e)
         {
             listele();
+
 
         }
 
