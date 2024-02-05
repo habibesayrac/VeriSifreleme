@@ -19,14 +19,42 @@ namespace VeriSifreleme
             InitializeComponent();
         }
         SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TestProject;Integrated Security=True");
-        
+
         void listele()
         {
-            SqlDataAdapter da = new SqlDataAdapter("Select*from TBLVERILER",connection);
+            SqlDataAdapter da = new SqlDataAdapter("select * from TBLVERILER", connection);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            dataGridView1.DataSource= dt;
+            dataGridView1.DataSource = dt;
+            DataTable dt2 = new DataTable();
+            dt2.Columns.Add("ID");
+            dt2.Columns.Add("AD");
+            dt2.Columns.Add("SOYAD");
+            dt2.Columns.Add("MAIL");
+            dt2.Columns.Add("SIFRE");
+            dt2.Columns.Add("HESAPNO");
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                DataRow r = dt2.NewRow();
+                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+                    try
+                    {
+                        string cozum = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        byte[] cozumdizi = Convert.FromBase64String(cozum);
+                        string cozumveri = ASCIIEncoding.ASCII.GetString(cozumdizi);
+                        r[j] = cozumveri;
+                    }
+                    catch (Exception)
+                    {
+                        r[j] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                dt2.Rows.Add(r);
+            }
+            dataGridView2.DataSource = dt2;
         }
+
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
             string ad = TxtAd.Text;
@@ -64,6 +92,8 @@ namespace VeriSifreleme
         private void Form1_Load(object sender, EventArgs e)
         {
             listele();
+
         }
+
     }
 }

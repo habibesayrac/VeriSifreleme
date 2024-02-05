@@ -40,17 +40,21 @@
             this.TxtHesapNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.BtnKaydet = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 199);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1168, 289);
+            this.dataGridView1.Size = new System.Drawing.Size(923, 152);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -105,7 +109,7 @@
             // 
             this.TxtSifre.Location = new System.Drawing.Point(533, 9);
             this.TxtSifre.Name = "TxtSifre";
-            this.TxtSifre.Size = new System.Drawing.Size(188, 35);
+            this.TxtSifre.Size = new System.Drawing.Size(210, 35);
             this.TxtSifre.TabIndex = 8;
             // 
             // label4
@@ -121,7 +125,7 @@
             // 
             this.TxtHesapNo.Location = new System.Drawing.Point(533, 50);
             this.TxtHesapNo.Name = "TxtHesapNo";
-            this.TxtHesapNo.Size = new System.Drawing.Size(188, 35);
+            this.TxtHesapNo.Size = new System.Drawing.Size(210, 35);
             this.TxtHesapNo.TabIndex = 10;
             // 
             // label5
@@ -135,19 +139,42 @@
             // 
             // BtnKaydet
             // 
-            this.BtnKaydet.Location = new System.Drawing.Point(555, 91);
+            this.BtnKaydet.Location = new System.Drawing.Point(533, 91);
             this.BtnKaydet.Name = "BtnKaydet";
-            this.BtnKaydet.Size = new System.Drawing.Size(145, 43);
+            this.BtnKaydet.Size = new System.Drawing.Size(100, 43);
             this.BtnKaydet.TabIndex = 11;
             this.BtnKaydet.Text = "Kaydet";
             this.BtnKaydet.UseVisualStyleBackColor = true;
             this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(639, 95);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 39);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Şifre Çöz";
+            this.button1.UseVisualStyleBackColor = true;
+            //this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 377);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(923, 152);
+            this.dataGridView2.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 500);
+            this.ClientSize = new System.Drawing.Size(958, 541);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnKaydet);
             this.Controls.Add(this.TxtHesapNo);
             this.Controls.Add(this.label5);
@@ -166,6 +193,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,6 +213,8 @@
         private System.Windows.Forms.TextBox TxtHesapNo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtnKaydet;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 
